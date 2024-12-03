@@ -15,7 +15,7 @@ int main() {
         // 呼叫 ShortString 函數並輸出結果
         string result = ShortString(t1, t2);
         cout << result << endl;
-
+        
         // 確認是否繼續
         cout << "要繼續嗎，請輸入 yes or no:" << endl;
         cin >> gameOver;
