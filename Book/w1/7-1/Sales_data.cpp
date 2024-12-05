@@ -1,5 +1,6 @@
 #include "Sales_data.h"
 
+
 // 加法函數
 Sales_data SaleAdd(const Sales_data& lhs, const Sales_data& rhs) {
     Sales_data sum = lhs;
@@ -9,7 +10,7 @@ Sales_data SaleAdd(const Sales_data& lhs, const Sales_data& rhs) {
 
 // 輸出函數
 ostream& SalePrint(ostream& os, const Sales_data& rhs) {
-    os << rhs.bookNo << " " << rhs.unitSold << " " << rhs.revenue << " " << rhs.avgPrice();
+    os << rhs.bookNo << " " << rhs.unitSold << " " << rhs.revenue << " " << rhs.avgPrice()<<endl;
     return os; // 返回 ostream
 }
 

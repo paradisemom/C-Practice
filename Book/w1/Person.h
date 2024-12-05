@@ -1,3 +1,5 @@
+#ifndef PERSON_H
+#define PERSON_H
 #include <iostream>
 using namespace std;
 
@@ -7,6 +9,10 @@ struct Person
         return *this;
     }
     string name;
-    string adress;
+    string address;
 
 };
+ostream& printPerson(ostream& os, const Person& rhs);
+istream& readPerson(istream& is, Person& rhs);
+
+#endif

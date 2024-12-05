@@ -10,7 +10,12 @@ struct Sales_data {
     Sales_data()=default;
     Sales_data(const string &s): bookNo(s){}
     Sales_data(const string &s,unsigned n,double p): bookNo(s),unitSold(n),revenue(p*n){}
-    Sales_data(istream &is);
+    // 接收 istream 的建構器
+    Sales_data(istream& is) {
+        double price = 0.0;
+        is >> bookNo >> unitSold >> price;
+        revenue = unitSold * price;
+    }
     string isbn() const { return bookNo; }
     Sales_data& Combine(const Sales_data& rhs) {
         unitSold += rhs.unitSold;
