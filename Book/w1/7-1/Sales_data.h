@@ -5,7 +5,11 @@
 #include <string>
 using namespace std;
 
-struct Sales_data {
+class Sales_data {
+    friend Sales_data SaleAdd(const Sales_data& lsh, const Sales_data& rsh);
+    friend ostream& SalePrint(ostream& os, const Sales_data& rhs);
+    friend istream& SaleRead(istream& is, Sales_data& rhs);
+    public:
     //new construct
     Sales_data()=default;
     Sales_data(const string &s): bookNo(s){}
@@ -22,10 +26,10 @@ struct Sales_data {
         revenue += rhs.revenue;
         return *this;
     }
-    double avgPrice() const {
+    inline double avgPrice() const {
         return unitSold ? revenue / unitSold : 0; // 避免除以 0
     }
-
+    private:
     string bookNo;
     unsigned unitSold = 0;
     double revenue = 0.0;

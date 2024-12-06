@@ -26,15 +26,18 @@ int main()
     readPerson(cin,person1);
     cout<<"person name and address:"<<endl;
     readPerson(cin,person2);
-    cout<<person1.name<<"'s address is "<<person1.address<<endl;
+    cout<<person1.GetName()<<"'s address is "<<person1.GetAddress()<<endl;
     printPerson(cout,person1);
-    cout<<person2.name<<"'s address is "<<person2.address<<endl;
+    cout<<person2.GetName()<<"'s address is "<<person2.GetAddress()<<endl;
     printPerson(cout,person2);
     cout<<"\nsale data";
     SaleRead(cin,data1);
     SaleRead(cin,data2);
     if(data1.isbn()==data2.isbn()){
-        SalePrint(cout,SaleAdd(data1,data2));
+        Sales_data sum;
+        sum=SaleAdd(data1,data2);
+        SalePrint(cout,sum);
+        cout<<"avg: "<<sum.avgPrice();
     }
     else
     {
