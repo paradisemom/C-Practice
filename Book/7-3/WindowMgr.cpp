@@ -14,3 +14,7 @@ void WindowMgr::Clear(ScreenIndex i){
 void WindowMgr::Clear(Screen &screen) {
     screen.contents = string(screen.height * screen.width, ' '); // 清空內容
 }
+WindowMgr::ScreenIndex WindowMgr::AddScreen(const Screen &s){
+    screens.push_back(s);
+    return screens.size()-1;
+}

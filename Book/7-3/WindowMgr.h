@@ -13,6 +13,7 @@ public:
     using ScreenIndex=vector<Screen>::size_type;
     void Clear(ScreenIndex);
     void Clear(Screen &);    // 新增操作任意 Screen 的方法
+    ScreenIndex AddScreen(const Screen &);
     vector<Screen> screens;
 
 private:
